@@ -1,0 +1,28 @@
+/* GLOBAL STYLES ****************************************/
+.btn:hover {
+    text-decoration: underline;
+}
+.buttonsDiv .btn {
+    margin: 1rem 1rem 0 0;
+}
+.form {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+.form .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1rem;
+    left: 45%;
+}
+.bg-blue {
+    background-color: #e7f1fe;
+}
+.card-columns {
+    margin-top: 1rem;
+}
+.input-group-append {
+    margin-right: 1rem;
+}
