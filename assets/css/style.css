@@ -26,3 +26,21 @@
 .input-group-append {
     margin-right: 1rem;
 }
+.container{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.row{
+    width: 100%;
+}
+.card .horisontal .hoverable{
+    width: 100% !important;
+    flex-direction: row;
+}
+.card-columns{
+    width: 100%;
+}
+img{
+    width: 100%;
+}
