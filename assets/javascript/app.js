@@ -13,6 +13,7 @@ $(document).ready( function(){
             $("#dump").append("<h5>Click to open in Wikipedia:</h5>")
             for (var i = 0; i < data[1].length; i++) {
               $("#dump").append(`<a href='${data[3][i]}' target='_blank'><div class='card horizontal hoverable'><div class='row'><div id='image${i}' class='card-image col s3 valign-wrapper'></div><div class='card-stacked col s9'><div class='card-content'><span class='card-title truncate'>${data[1][i]}</span><p>${data[2][i]}&nbsp;</p></div></div></div></div></a>`);
+            console.log(data[3][i])
             }
             $.ajax({
               url: `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&wbptterms=description&gpssearch=${searchInput}&gpslimit=20`,
