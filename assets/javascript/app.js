@@ -1,10 +1,22 @@
 $(document).ready( function(){
 
+  // to do
+    // grab location from wikipedia search
+    // prioritize authors in wikipedia search results - nothing else
+    // style cards similar to JifTastic homework
+    // fix searchbar that breaks at small phone breakpoint
+    // make search query work on enter key press, not just button click
+    // 
+
+
     $("#submitSearch").on('click', function(event) {
         var searchInput = $("#searchInput").val();
         event.preventDefault();
         $.ajax({
-          url: `https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${searchInput}&limit=20&callback=?`,
+
+          // action=query&generator=categorymembers&gcmtitle=Category:Writers
+
+          url: `https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=James Baldwin&limit=10&gcmtitle=Category:Writers&callback=?`,
           method: "GET",
           dataType: "jsonp",
           success: function(data) {
@@ -15,6 +27,7 @@ $(document).ready( function(){
               $("#dump").append(`<a href='${data[3][i]}' target='_blank'><div class='card horizontal hoverable'><div class='row'><div id='image${i}' class='card-image col s3 valign-wrapper'></div><div class='card-stacked col s9'><div class='card-content'><span class='card-title truncate'>${data[1][i]}</span><p>${data[2][i]}&nbsp;</p></div></div></div></div></a>`);
             }
             $.ajax({
+              // getting images from wikipedia
               url: `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&wbptterms=description&gpssearch=${searchInput}&gpslimit=20`,
               method: "GET",
               dataType: "jsonp",
